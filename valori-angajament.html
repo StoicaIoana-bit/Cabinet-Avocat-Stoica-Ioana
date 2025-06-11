@@ -41,8 +41,12 @@
       font-size: 1.5rem;
       font-weight: 700;
     }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
     nav a {
-      margin-left: 30px;
       font-weight: 600;
       font-size: 1rem;
       color: #ffd700;
@@ -52,6 +56,23 @@
     nav a:hover {
       color: #f0c64c;
     }
+
+    /* Hamburger menu button - ascuns pe desktop */
+    #menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      width: 25px;
+      height: 20px;
+      justify-content: space-between;
+    }
+    #menu-toggle span {
+      display: block;
+      height: 3px;
+      background: #ffd700;
+      border-radius: 2px;
+    }
+
     /* Main content */
     main {
       max-width: 900px;
@@ -117,9 +138,29 @@
         font-size: 1.8rem;
         padding: 20px 10px;
       }
+      nav {
+        position: fixed;
+        top: 60px;
+        right: 0;
+        background: #012A4A;
+        flex-direction: column;
+        width: 200px;
+        padding: 20px;
+        height: calc(100vh - 60px);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        box-shadow: -2px 0 8px rgba(0,0,0,0.3);
+        border-radius: 0 0 0 8px;
+      }
+      nav.open {
+        transform: translateX(0);
+      }
       nav a {
-        margin-left: 15px;
-        font-size: 0.9rem;
+        margin: 15px 0;
+        font-size: 1.2rem;
+      }
+      #menu-toggle {
+        display: flex;
       }
     }
   </style>
@@ -127,12 +168,17 @@
 <body>
 <header>
   <div class="logo">Cabinetul Stoica Ioana – Avocat</div>
-  <nav>
-    <a href="./">Acasă</a>
-<a href="despre.html">Despre</a>
-<a href="servicii.html">Servicii</a>
-<a href="valori-angajament.html">Valori-angajament</a>
-<a href="contact.html">Contact</a>
+  <div id="menu-toggle" aria-label="Toggle menu" tabindex="0" role="button">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav id="menu">
+    <a href="index.html">Acasă</a>
+    <a href="despre.html">Despre</a>
+    <a href="servicii.html">Servicii</a>
+    <a href="valori-angajament.html">Valori-angajament</a>
+    <a href="contact.html">Contact</a>
   </nav>
 </header>
 
@@ -181,6 +227,19 @@
       setTimeout(() => {
         el.classList.add('visible');
       }, 200 * i);
+    });
+
+    // Toggle meniu mobil
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('open');
+    });
+    menuToggle.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        menu.classList.toggle('open');
+      }
     });
   });
 </script>
