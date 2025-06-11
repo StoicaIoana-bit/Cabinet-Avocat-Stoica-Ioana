@@ -41,17 +41,76 @@
       font-size: 1.5rem;
       font-weight: 700;
     }
-    nav a {
-      margin-left: 30px;
+    nav.desktop-menu {
+      display: flex;
+      gap: 30px;
+    }
+    nav.desktop-menu a {
       font-weight: 600;
       font-size: 1rem;
       color: #ffd700;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
-    nav a:hover {
+    nav.desktop-menu a:hover {
       color: #f0c64c;
     }
+
+    /* Hamburger button */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      width: 25px;
+      height: 20px;
+      justify-content: space-between;
+    }
+    .hamburger span {
+      display: block;
+      height: 3px;
+      background: #ffd700;
+      border-radius: 2px;
+    }
+
+    /* Mobile menu - initial hidden */
+    nav.mobile-menu {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      top: 60px;
+      right: 0;
+      background: #012A4A;
+      width: 200px;
+      padding: 20px;
+      box-shadow: -3px 3px 10px rgba(0,0,0,0.3);
+      border-radius: 0 0 0 10px;
+    }
+    nav.mobile-menu a {
+      margin: 15px 0;
+      font-size: 1.1rem;
+      color: #ffd700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    nav.mobile-menu a:hover {
+      color: #f0c64c;
+    }
+
+    /* Show hamburger and hide desktop nav on mobile */
+    @media (max-width: 768px) {
+      nav.desktop-menu {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* Show mobile menu when active */
+    nav.mobile-menu.active {
+      display: flex;
+    }
+
     /* Main content with background image */
     main {
       max-width: 900px;
@@ -64,7 +123,6 @@
       box-shadow: 0 4px 12px rgb(180 134 28 / 0.25);
       background-blend-mode: lighten;
     }
-    /* Overlay layer to improve text contrast */
     main::before {
       content: '';
       position: absolute;
@@ -80,8 +138,8 @@
 
     /* Banda cu textul de titlu */
     .banner-text {
-      background-color: #012A4A; /* albastru închis */
-      color: #ffd700; /* auriu */
+      background-color: #012A4A;
+      color: #ffd700;
       text-align: center;
       padding: 25px 15px;
       font-size: 2.5rem;
@@ -91,19 +149,14 @@
       border-radius: 8px;
       margin-bottom: 40px;
       user-select: none;
-
-      /* Inițial, banda este invizibilă și sus */
       transform: translateY(-100%);
       opacity: 0;
       transition: transform 0.7s ease, opacity 0.7s ease;
     }
-
-    /* Clasa care activează animația */
     .banner-text.slide-in {
       transform: translateY(0);
       opacity: 1;
     }
-
     h2 {
       color: #b4881c;
       margin-top: 40px;
@@ -117,20 +170,15 @@
       margin-bottom: 20px;
       color: #333;
     }
-
-    /* Slide-up fade-in animation pentru text */
     .slide-up {
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
-
     .slide-up.visible {
       opacity: 1;
       transform: translateY(0);
     }
-
-    /* Responsive */
     @media (max-width: 768px) {
       main {
         margin: 120px 15px 40px 15px;
@@ -140,7 +188,7 @@
         font-size: 1.8rem;
         padding: 20px 10px;
       }
-      nav a {
+      nav.desktop-menu a {
         margin-left: 15px;
         font-size: 0.9rem;
       }
@@ -150,12 +198,32 @@
 <body>
 <header>
   <div class="logo">Cabinetul Stoica Ioana – Avocat</div>
-  <nav>
-    <a href="./">Acasă</a>
-<a href="despre.html">Despre</a>
-<a href="servicii.html">Servicii</a>
-<a href="valori-angajament.html">Valori-angajament</a>
-<a href="contact.html">Contact</a>
+  
+  <!-- Meniu desktop cu clasa desktop-menu -->
+  <nav id="menu" class="desktop-menu" role="navigation" aria-label="Meniu principal">
+    <a href="index.html">Acasă</a>
+    <a href="despre.html" aria-current="page">Despre</a>
+    <a href="servicii.html">Servicii</a>
+    <a href="valori-angajament.html">Valori-angajament</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://www.avocatstoicaioana.ro" target="_blank" rel="noopener">www.avocatstoicaioana.ro</a>
+  </nav>
+  
+  <!-- Buton hamburger -->
+  <div class="hamburger" aria-label="Meniu mobil" tabindex="0" role="button" aria-expanded="false" aria-controls="mobile-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  
+  <!-- Meniu mobil -->
+  <nav id="mobile-menu" class="mobile-menu" aria-hidden="true" role="navigation" aria-label="Meniu mobil">
+    <a href="index.html">Acasă</a>
+    <a href="despre.html" aria-current="page">Despre</a>
+    <a href="servicii.html">Servicii</a>
+    <a href="valori-angajament.html">Valori-angajament</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://www.avocatstoicaioana.ro" target="_blank" rel="noopener">www.avocatstoicaioana.ro</a>
   </nav>
 </header>
 
@@ -187,18 +255,27 @@
 </footer>
 
 <script>
+  // Animatii banner si fade-up text
   window.addEventListener('load', () => {
     const banner = document.querySelector('.banner-text');
     banner.classList.add('slide-in');
 
-    // Adăugăm clasa .visible pentru toate elementele cu .slide-up
     const slideElements = document.querySelectorAll('.slide-up');
     slideElements.forEach((el, i) => {
-      // Delay progresiv pentru efect de "val"
       setTimeout(() => {
         el.classList.add('visible');
       }, 200 * i);
     });
+  });
+
+  // Toggle meniu mobil
+  const hamburger = document.querySelector('.hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  hamburger.addEventListener('click', () => {
+    const isActive = mobileMenu.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', isActive);
+    mobileMenu.setAttribute('aria-hidden', !isActive);
   });
 </script>
 </body>
