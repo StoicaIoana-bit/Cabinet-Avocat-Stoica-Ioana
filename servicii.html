@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Servicii și Domenii - Cabinet Avocat Stoica Ioana</title>
   <style>
-    /* CSS neschimbat */
+    /* CSS original */
     * { box-sizing: border-box; }
     body {
       margin: 0;
@@ -125,18 +125,95 @@
       .banner-text { font-size: 1.8rem; padding: 20px 10px; }
       nav a { margin-left: 15px; font-size: 0.9rem; }
     }
+
+    /* Meniu burger */
+
+    /* Butonul burger - ascuns pe desktop */
+    #burger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 28px;
+      height: 22px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 1000;
+    }
+
+    #burger span {
+      width: 100%;
+      height: 3px;
+      background: #ffd700;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    /* Când meniul e deschis - animare X */
+    #burger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    #burger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    #burger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Ascunde meniul în mod normal pe mobil */
+    .nav-menu {
+      display: flex;
+    }
+
+    @media (max-width: 768px) {
+      nav.nav-menu {
+        position: fixed;
+        top: 65px; /* sub header */
+        right: 0;
+        width: 200px;
+        background-color: #012A4A;
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        box-shadow: -3px 0 8px rgba(0,0,0,0.3);
+        border-radius: 0 0 0 8px;
+      }
+      nav.nav-menu.show {
+        transform: translateX(0);
+      }
+
+      nav.nav-menu a {
+        color: #ffd700;
+        font-weight: 700;
+        font-size: 1.1rem;
+        margin-left: 0;
+      }
+
+      /* Afișează butonul burger pe mobil */
+      #burger {
+        display: flex;
+      }
+    }
   </style>
 </head>
 <body>
 <header>
   <div class="logo">Cabinetul Stoica Ioana – Avocat</div>
-  <nav>
-    <a href="./">Acasă</a>
+  <nav id="menu" class="nav-menu">
+    <a href="index.html">Acasă</a>
     <a href="despre.html">Despre</a>
     <a href="servicii.html">Servicii</a>
     <a href="valori-angajament.html">Valori-angajament</a>
     <a href="contact.html">Contact</a>
   </nav>
+  <button id="burger" aria-label="Meniu mobil">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </header>
 
 <main>
@@ -181,6 +258,15 @@
     const banner = document.querySelector('.banner-text');
     banner.classList.add('slide-in');
     document.querySelector('main').style.opacity = 1;
+  });
+
+  // Toggle meniu burger
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('menu');
+
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('active');
+    menu.classList.toggle('show');
   });
 </script>
 </body>
