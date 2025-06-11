@@ -195,31 +195,33 @@
       .hero p {
         font-size: 1rem;
       }
-      nav a {
-        margin-left: 0;
-        font-size: 1.1rem;
-        padding: 10px 0;
-        display: block;
-        border-bottom: 1px solid #444;
-        color: #ffd700;
-      }
       nav {
         position: fixed;
         top: 70px;
-        left: 0;
-        width: 100%;
+        right: 0;          /* meniul pe dreapta */
+        width: 280px;
+        height: calc(100vh - 70px);
         background: #012A4A;
         flex-direction: column;
         align-items: flex-start;
-        padding: 20px 40px;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
+        padding: 20px 30px;
+        max-height: none;
+        overflow-y: auto;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
         z-index: 998;
       }
       nav.active {
-        max-height: 300px; /* sau cât ai nevoie */
-        overflow-y: auto;
+        transform: translateX(0);
+      }
+      nav a {
+        margin-left: 0;
+        font-size: 1.1rem;
+        padding: 15px 0;
+        display: block;
+        border-bottom: 1px solid #444;
+        color: #ffd700;
+        width: 100%;
       }
       .burger {
         display: flex;
@@ -234,8 +236,8 @@
 <body>
 <header>
   <div class="logo" style="font-size: 1rem;">
-  Cabinet Avocat Stoica Ioana
-</div>
+    Cabinet Avocat Stoica Ioana
+  </div>
 
   <!-- Iconița burger -->
   <div class="burger" id="burger" aria-label="Meniu mobil" role="button" tabindex="0">
@@ -257,7 +259,7 @@
   <div class="overlay">
     <h1>„Ubi lex, ibi remedium.”</h1>
     <div class="site-link">
-      <a href="https://www.avocatnet.ro" target="_blank">www.avocatnet.ro</a></p>
+      <a href="https://www.avocatnet.ro" target="_blank" rel="noopener noreferrer">www.avocatnet.ro</a>
     </div>
   </div>
 </section>
