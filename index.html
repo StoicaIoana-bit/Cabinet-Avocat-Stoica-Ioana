@@ -41,6 +41,11 @@
       font-size: 1.5rem;
       font-weight: 700;
     }
+    nav {
+      display: flex;
+      align-items: center;
+      /* Adaugat pentru a putea controla afisarea */
+    }
     nav a {
       margin-left: 30px;
       font-weight: 600;
@@ -48,10 +53,28 @@
       color: #ffd700;
       text-transform: uppercase;
       letter-spacing: 1px;
+      white-space: nowrap;
     }
     nav a:hover {
       color: #f0c64c;
     }
+
+    /* BURGER MENU */
+    .burger {
+      display: none; /* ascuns pe desktop */
+      flex-direction: column;
+      justify-content: space-between;
+      width: 25px;
+      height: 20px;
+      cursor: pointer;
+      margin-left: 20px;
+    }
+    .burger div {
+      height: 3px;
+      background: #ffd700;
+      border-radius: 3px;
+    }
+
     /* Hero */
     .hero {
       position: relative;
@@ -83,6 +106,16 @@
       font-style: italic;
       font-weight: 500;
     }
+    /* Link sub citat în hero */
+    .hero .site-link {
+      margin-top: 15px;
+    }
+    .hero .site-link a {
+      color: #b4881c;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
     /* Section Servicii */
     section.servicii {
       max-width: 1100px;
@@ -146,6 +179,7 @@
       font-size: 0.9rem;
       margin-top: 50px;
     }
+
     /* Responsive */
     @media (max-width: 768px) {
       .hero {
@@ -162,11 +196,37 @@
         font-size: 1rem;
       }
       nav a {
-        margin-left: 15px;
-        font-size: 0.9rem;
+        margin-left: 0;
+        font-size: 1.1rem;
+        padding: 10px 0;
+        display: block;
+        border-bottom: 1px solid #444;
+        color: #ffd700;
       }
-      section.servicii {
-        margin: 30px 10px;
+      nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #012A4A;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 40px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        z-index: 998;
+      }
+      nav.active {
+        max-height: 300px; /* sau cât ai nevoie */
+        overflow-y: auto;
+      }
+      .burger {
+        display: flex;
+      }
+      /* Ajustare margin logo pentru burger */
+      header .logo {
+        max-width: 70%;
       }
     }
   </style>
@@ -175,23 +235,31 @@
 <header>
   <div class="logo">
     Cabinet Avocat Stoica Ioana
-    <div class="site-link">
-      <a href="https://www.avocatstoicaioana.ro" target="_blank">www.avocatstoicaioana.ro</a>
-    </div>
   </div>
- <nav>
-    <a href="./">Acasă</a>
-<a href="despre.html">Despre</a>
-<a href="servicii.html">Servicii</a>
-<a href="valori-angajament.html">Valori-angajament</a>
-<a href="contact.html">Contact</a>
+
+  <!-- Iconița burger -->
+  <div class="burger" id="burger" aria-label="Meniu mobil" role="button" tabindex="0">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <nav id="menu">
+    <a href="index.html">Acasă</a>
+    <a href="despre.html">Despre</a>
+    <a href="servicii.html">Servicii</a>
+    <a href="valori-angajament.html">Valori-angajament</a>
+    <a href="contact.html">Contact</a>
   </nav>
 </header>
 
 <section class="hero" role="img" aria-label="Imagine avocatură">
   <div class="overlay">
-    <h1>Consultanță și Reprezentare Juridică Profesională</h1>
-    <p>„Dreptatea este scopul legii, iar adevărul este calea avocatului.”</p>
+    <h1>Domenii de drept </h1>
+    <p>„Ubi lex, ibi remedium.”</p>
+    <div class="site-link">
+      <a href="https://www.avocatstoicaioana.ro" target="_blank" rel="noopener noreferrer">www.avocatstoicaioana.ro</a>
+    </div>
   </div>
 </section>
 
@@ -238,5 +306,23 @@
   &copy; 2025 Cabinet Avocat Stoica Ioana &ndash; Toate drepturile rezervate<br />
   Str. Primăverii, nr. 55, Constanța &nbsp;&bull;&nbsp; Telefon: +40 730 735 302 &nbsp;&bull;&nbsp; Email: stoica.juridic@yahoo.com
 </footer>
+
+<!-- Script pentru toggle meniu burger -->
+<script>
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('menu');
+
+  burger.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+
+  // Optional: toggle și la Enter/Space pentru accesibilitate
+  burger.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      menu.classList.toggle('active');
+    }
+  });
+</script>
 </body>
 </html>
