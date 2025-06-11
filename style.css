@@ -1,0 +1,147 @@
+/* Reset & fonts */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fff;
+  color: #012A4A;
+  line-height: 1.6;
+}
+a {
+  color: #b4881c;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #012A4A;
+  color: #ffd700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+header .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+nav a {
+  margin-left: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #ffd700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+nav a:hover {
+  color: #f0c64c;
+}
+
+/* Animație slide și fade */
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Main content with background image */
+main {
+  max-width: 900px;
+  margin: 100px auto 50px auto;
+  padding: 40px 30px;
+  background: url('documente.jpeg') no-repeat center center/cover;
+  color: #012A4A;
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgb(180 134 28 / 0.25);
+  background-blend-mode: lighten;
+
+  animation: slideFadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+/* Overlay layer to improve text contrast */
+main::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255 255 255 / 0.85);
+  border-radius: 12px;
+  z-index: 0;
+}
+main > * {
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  color: #012A4A;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+h2 {
+  color: #b4881c;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  border-bottom: 2px solid #b4881c;
+  padding-bottom: 5px;
+}
+p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Slide-up fade-in animation pentru text */
+.slide-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.slide-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  main {
+    margin: 120px 15px 40px 15px;
+    padding: 25px 15px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  nav a {
+    margin-left: 15px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 10px;
+  background: #012A4A;
+  color: #ffd700;
+  margin: 0;
+} 

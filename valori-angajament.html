@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Valori-angajament - Cabinet Avocat Stoica Ioana</title>
+  <style>
+    /* Reset & fonts */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fff;
+      color: #012A4A;
+      line-height: 1.6;
+    }
+    a {
+      color: #b4881c;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #012A4A;
+      color: #ffd700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 999;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    header .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    nav a {
+      margin-left: 30px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #ffd700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    nav a:hover {
+      color: #f0c64c;
+    }
+    /* Main content */
+    main {
+      max-width: 900px;
+      margin: 100px auto 50px auto;
+      padding: 40px 30px;
+      background: #fff;
+      color: #012A4A;
+      position: relative;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgb(180 134 28 / 0.25);
+    }
+    /* Banda cu textul de titlu */
+    .banner-text {
+      background-color: #012A4A; /* albastru închis */
+      color: #ffd700; /* auriu */
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      box-shadow: 0 4px 8px rgba(180, 134, 28, 0.5);
+      border-radius: 8px;
+      margin-bottom: 40px;
+      user-select: none;
+
+      /* Inițial, banda este invizibilă și sus */
+      transform: translateY(-100%);
+      opacity: 0;
+      transition: transform 0.7s ease, opacity 0.7s ease;
+    }
+
+    /* Clasa care activează animația */
+    .banner-text.slide-in {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    /* Slide-up fade-in animation pentru text */
+    .slide-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .slide-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      main {
+        margin: 120px 15px 40px 15px;
+        padding: 25px 15px;
+      }
+      .banner-text {
+        font-size: 1.8rem;
+        padding: 20px 10px;
+      }
+      nav a {
+        margin-left: 15px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">Cabinetul Stoica Ioana – Avocat</div>
+  <nav>
+    <a href="./">Acasă</a>
+<a href="despre.html">Despre</a>
+<a href="servicii.html">Servicii</a>
+<a href="valori-angajament.html">Valori-angajament</a>
+<a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="banner-text">Valori-angajament</div>
+  
+  <p class="slide-up">Cabinetul de avocat STOICA IOANA funcționează pe baza unui program flexibil, adaptat nevoilor clienților. Cu o programare prealabilă, clienții pot beneficia de asistență juridică în timpul săptămânii, de luni până vineri, în intervalul 08:00-18:00.</p>
+  
+  <p class="slide-up">Clienții se simt pe deplin mulțumiți nu doar de serviciile profesionale oferite, ci și de calitatea relației construite cu doamna avocat Stoica Ioana.</p>
+  
+  <p class="slide-up">Aceasta este apreciată nu doar pentru cunoștințele sale juridice de excepție, ci și pentru modul său empatic și dedicat de a se implica în problemele clienților.</p>
+  
+  <p class="slide-up">Unul dintre aspectele esențiale care distinge Cabinetul de avocat STOICA IOANA este profesionalismul exemplar.</p>
+  
+  <p class="slide-up">Fiecare caz este abordat cu atenție la detalii, iar soluțiile oferite sunt personalizate în funcție de nevoile specifice ale fiecărui client.</p>
+  
+  <p class="slide-up">În plus, cabinetul se remarcă prin promptitudinea și eficiența serviciilor sale, asigurându-se că fiecare client primește o asistență juridică de cea mai înaltă calitate.</p>
+  
+  <p class="slide-up">Opiniile clienților confirmă faptul că Cabinetul de avocat STOICA IOANA depășește așteptările.</p>
+  
+  <p class="slide-up">Recenziile pozitive subliniază profesionalismul doamnei avocat Stoica Ioana și rezultatele remarcabile obținute în cadrul proceselor legale.</p>
+  
+  <p class="slide-up">Clienții apreciază, de asemenea, dedicarea și pasiunea pe care avocata le manifestă în abordarea cazurilor.</p>
+  
+  <p class="slide-up">Indiferent de natura problemei juridice sau de complexitatea cazului, Cabinetul de avocat STOICA IOANA este alegerea potrivită pentru clienții care caută o asistență juridică de înaltă calitate.</p>
+  
+  <p class="slide-up">Cu profesionalismul său de excepție, dedicația față de clienți și rezultatele obținute, cabinetul și-a câștigat statutul de avocat de excepție în Constanța și își merită cu prisosință reputația impecabilă.</p>
+</main>
+
+<footer>
+  <p style="text-align:center; padding:20px 10px; background:#012A4A; color:#ffd700; margin:0;">
+    &copy; 2025 Cabinet Avocat Stoica Ioana &ndash; Toate drepturile rezervate<br />
+    Str. Primăverii, nr. 55, Constanța &nbsp;&bull;&nbsp; Telefon: +40 730 735 302 &nbsp;&bull;&nbsp; Email: stoica.juridic@yahoo.com
+  </p>
+</footer>
+
+<script>
+  window.addEventListener('load', () => {
+    const banner = document.querySelector('.banner-text');
+    banner.classList.add('slide-in');
+
+    // Adăugăm clasa .visible pentru toate elementele cu .slide-up
+    const slideElements = document.querySelectorAll('.slide-up');
+    slideElements.forEach((el, i) => {
+      // Delay progresiv pentru efect de "val"
+      setTimeout(() => {
+        el.classList.add('visible');
+      }, 200 * i);
+    });
+  });
+</script>
+</body>
+</html>

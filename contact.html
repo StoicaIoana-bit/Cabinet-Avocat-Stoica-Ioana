@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact - Cabinet Avocat Stoica Ioana</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fff;
+      color: #012A4A;
+      line-height: 1.6;
+    }
+    a {
+      color: #b4881c;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #012A4A;
+      color: #ffd700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 999;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    header .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    nav a {
+      margin-left: 30px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #ffd700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    nav a:hover {
+      color: #f0c64c;
+    }
+    main {
+      max-width: 700px;
+      margin: 100px auto 50px auto;
+      padding: 40px 30px;
+      position: relative;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgb(180 134 28 / 0.25);
+      background-color: #fefefe;
+      animation: slideFadeIn 1s ease forwards;
+      opacity: 0;
+    }
+    main::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(255 255 255 / 0.85);
+      border-radius: 12px;
+      z-index: 0;
+    }
+    main > * {
+      position: relative;
+      z-index: 1;
+    }
+    h1 {
+      color: #012A4A;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      font-weight: 700;
+      text-align: center;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #012A4A;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border: 2px solid #b4881c;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      resize: vertical;
+      transition: border-color 0.3s ease;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border-color: #ffd700;
+      outline: none;
+    }
+    textarea {
+      min-height: 120px;
+    }
+    button {
+      background-color: #012A4A;
+      color: #ffd700;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0a3a6a;
+    }
+    .contact-info {
+      margin-top: 40px;
+      border-top: 2px solid #b4881c;
+      padding-top: 30px;
+      color: #012A4A;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    .contact-info p {
+      margin: 8px 0;
+    }
+    @keyframes slideFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @media (max-width: 768px) {
+      main {
+        margin: 120px 15px 40px 15px;
+        padding: 25px 15px;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      nav a {
+        margin-left: 15px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">Cabinetul Stoica Ioana – Avocat</div>
+  <nav>
+<a href="./">Acasă</a>
+<a href="despre.html">Despre</a>
+<a href="servicii.html">Servicii</a>
+<a href="valori-angajament.html">Valori-angajament</a>
+<a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Contactează-ne</h1>
+  <form action="#" method="post" onsubmit="alert('Mulțumim pentru mesaj! Vom reveni în cel mai scurt timp.'); return false;">
+    <label for="nume">Nume complet</label>
+    <input type="text" id="nume" name="nume" required />
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="subiect">Subiect</label>
+    <input type="text" id="subiect" name="subiect" required />
+
+    <label for="mesaj">Mesaj</label>
+    <textarea id="mesaj" name="mesaj" required></textarea>
+
+    <button type="submit">Trimite</button>
+  </form>
+
+  <div class="contact-info">
+  <p><strong>Telefon:</strong> +40 730 735 302</p>
+  <p><strong>Email:</strong> stoica.juridic@yahoo.com</p>
+  <p><strong>Adresă:</strong> Str. Primăverii, nr. 55, Constanța</p>
+  <p><strong>Resurse utile:</strong> <a href="https://www.avocatnet.ro" target="_blank">www.avocatnet.ro</a></p>
+</div>
+</main>
+
+<footer>
+  <p>
+    &copy; 2025 Cabinet Avocat Stoica Ioana &ndash; Toate drepturile rezervate<br />
+    Str. Primăverii, nr. 55, Constanța &nbsp;&bull;&nbsp; Telefon: +40 730 735 302 &nbsp;&bull;&nbsp; Email: stoica.juridic@yahoo.com
+  </p>
+</footer>
+
+<!-- Buton WhatsApp -->
+<a href="https://wa.me/40730735302?text=Salut!%20Aș%20dori%20mai%20multe%20informații." 
+   target="_blank" 
+   style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; 
+          background-color: #25D366; border-radius: 50%; 
+          padding: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+       alt="Contact pe WhatsApp" 
+       style="width: 40px; height: 40px;">
+</a>
+
+<script>
+  window.addEventListener('load', () => {
+    document.querySelector('main').style.opacity = 1;
+  });
+</script>
+</body>
+</html>

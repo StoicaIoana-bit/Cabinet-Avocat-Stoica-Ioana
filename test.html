@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Servicii și Domenii - Cabinet Avocat Stoica Ioana</title>
+  <style>
+    /* CSS neschimbat */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('fundal.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      color: #012A4A;
+      line-height: 1.6;
+    }
+    a { color: #b4881c; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #012A4A;
+      color: #ffd700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 999;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    header .logo { font-size: 1.5rem; font-weight: 700; }
+    nav a {
+      margin-left: 30px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #ffd700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    nav a:hover { color: #f0c64c; }
+
+    main {
+      max-width: 900px;
+      margin: 100px auto 50px auto;
+      padding: 40px 30px;
+      border-radius: 12px;
+      background-color: rgba(255, 255, 255, 0.85);
+      box-shadow: 0 4px 12px rgb(180 134 28 / 0.25);
+      animation: slideFadeIn 1s ease forwards;
+      opacity: 0;
+    }
+
+    .banner-text {
+      background-color: #012A4A;
+      color: #ffd700;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      box-shadow: 0 4px 8px rgba(180, 134, 28, 0.5);
+      border-radius: 8px;
+      margin-bottom: 40px;
+      user-select: none;
+      transform: translateY(-100%);
+      opacity: 0;
+      transition: transform 0.7s ease, opacity 0.7s ease;
+    }
+    .banner-text.slide-in {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    h2 {
+      color: #b4881c;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      font-weight: 700;
+      border-bottom: 2px solid #b4881c;
+      padding-bottom: 5px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    ul.services-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    ul.services-list li {
+      background: #fff8dc;
+      border-left: 5px solid #b4881c;
+      margin-bottom: 20px;
+      padding: 15px 20px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(180,134,28,0.15);
+      transition: background-color 0.3s ease;
+    }
+    ul.services-list li:hover { background-color: #fff3b0; }
+    ul.services-list li strong { color: #012A4A; font-weight: 700; }
+
+    footer {
+      text-align: center;
+      padding: 20px 10px;
+      background: #012A4A;
+      color: #ffd700;
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    @keyframes slideFadeIn {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      main { margin: 120px 15px 40px 15px; padding: 25px 15px; }
+      .banner-text { font-size: 1.8rem; padding: 20px 10px; }
+      nav a { margin-left: 15px; font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">Cabinetul Stoica Ioana – Avocat</div>
+  <nav>
+    <a href="index.html">Acasă</a>
+    <a href="despre.html">Despre</a>
+    <a href="servicii.html">Servicii</a>
+    <a href="valori-angajament.html">Valori-angajament</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="banner-text">Servicii și Domenii de activitate</div>
+
+  <h2>Servicii juridice</h2>
+  <ul class="services-list">
+    <li><strong>Consultanță și asistență juridică</strong><br />Oferim sprijin juridic personalizat în funcție de nevoile fiecărui client, indiferent de complexitatea cauzei.</li>
+    <li><strong>Reprezentare în fața instanțelor</strong><br />Asigurăm apărarea intereselor dvs. în fața instanțelor de judecată din întreaga țară, atât în cauze civile, cât și penale sau comerciale.</li>
+    <li><strong>Redactare și revizuire acte</strong><br />Întocmim contracte, cereri, notificări, opinii legale și alte documente juridice esențiale pentru protejarea intereselor clientului.</li>
+    <li><strong>Dreptul familiei și succesiuni</strong><br />Oferim asistență în divorțuri, partaje, custodie, pensie alimentară, testamente și moșteniri.</li>
+    <li><strong>Drept comercial și societar</strong><br />Consultanță privind înființarea, modificarea și dizolvarea societăților, redactare contracte comerciale și reprezentare în litigii între profesioniști.</li>
+    <li><strong>Drept contravențional</strong><br />Contestații procese-verbale de contravenție, anulare amenzi, recuperare permis, inclusiv în domeniul rutier.</li>
+    <li><strong>Servicii juridice GDPR</strong><br />Consultanță pentru companii și persoane fizice privind alinierea la legislația privind protecția datelor cu caracter personal.</li>
+  </ul>
+
+  <h2>Domenii de activitate</h2>
+  <ul class="services-list">
+    <li><strong>Drept civil</strong><br />Litigii legate de contracte, proprietate, succesiuni, obligații și răspunderi civile.</li>
+    <li><strong>Drept penal</strong><br />Apărarea intereselor clienților în dosare penale, în toate etapele procesului.</li>
+    <li><strong>Dreptul muncii</strong><br />Conflicte de muncă, concedieri, drepturi salariale și alte aspecte ce țin de relațiile de muncă.</li>
+    <li><strong>Drept administrativ</strong><br />Contestații ale actelor administrative, anularea amenzilor sau a altor măsuri emise de autorități.</li>
+    <li><strong>Drept comercial</strong><br />Relații contractuale între profesioniști, insolvență, executare silită și litigii comerciale.</li>
+    <li><strong>Protecția consumatorului</strong><br />Reclamații împotriva abuzurilor comercianților, clauze abuzive, litigii de garanție.</li>
+    <li><strong>Drept fiscal</strong><br />Contestații împotriva deciziilor de impunere și alte probleme legate de obligațiile fiscale.</li>
+  </ul>
+
+  <p style="margin-top:40px; text-align:center; font-weight:700; color:#b4881c;">
+    Pentru informații suplimentare sau stabilirea unei programări, nu ezitați să ne <a href="contact.html">contactați</a>.
+  </p>
+</main>
+
+<footer>
+  <p style="text-align:center; padding:20px 10px; background:#012A4A; color:#ffd700; margin:0;">
+    &copy; 2025 Cabinet Avocat Stoica Ioana &ndash; Toate drepturile rezervate<br />
+    Str. Primăverii, nr. 55, Constanța &nbsp;&bull;&nbsp; Telefon: +40 730 735 302 &nbsp;&bull;&nbsp; Email: stoica.juridic@yahoo.com
+  </p>
+</footer>
+
+<script>
+  window.addEventListener('load', () => {
+    const banner = document.querySelector('.banner-text');
+    banner.classList.add('slide-in');
+    document.querySelector('main').style.opacity = 1;
+  });
+</script>
+</body>
+</html>

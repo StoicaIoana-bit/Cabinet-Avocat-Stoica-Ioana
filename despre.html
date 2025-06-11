@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Despre - Cabinet Avocat Stoica Ioana</title>
+  <style>
+    /* Reset & fonts */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fff;
+      color: #012A4A;
+      line-height: 1.6;
+    }
+    a {
+      color: #b4881c;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #012A4A;
+      color: #ffd700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 999;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    header .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    nav a {
+      margin-left: 30px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #ffd700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    nav a:hover {
+      color: #f0c64c;
+    }
+    /* Main content with background image */
+    main {
+      max-width: 900px;
+      margin: 100px auto 50px auto;
+      padding: 40px 30px;
+      background: url('sala.jpg') no-repeat center center/cover;
+      color: #012A4A;
+      position: relative;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgb(180 134 28 / 0.25);
+      background-blend-mode: lighten;
+    }
+    /* Overlay layer to improve text contrast */
+    main::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(255 255 255 / 0.85);
+      border-radius: 12px;
+      z-index: 0;
+    }
+    main > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Banda cu textul de titlu */
+    .banner-text {
+      background-color: #012A4A; /* albastru închis */
+      color: #ffd700; /* auriu */
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      box-shadow: 0 4px 8px rgba(180, 134, 28, 0.5);
+      border-radius: 8px;
+      margin-bottom: 40px;
+      user-select: none;
+
+      /* Inițial, banda este invizibilă și sus */
+      transform: translateY(-100%);
+      opacity: 0;
+      transition: transform 0.7s ease, opacity 0.7s ease;
+    }
+
+    /* Clasa care activează animația */
+    .banner-text.slide-in {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    h2 {
+      color: #b4881c;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      font-weight: 700;
+      border-bottom: 2px solid #b4881c;
+      padding-bottom: 5px;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    /* Slide-up fade-in animation pentru text */
+    .slide-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .slide-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      main {
+        margin: 120px 15px 40px 15px;
+        padding: 25px 15px;
+      }
+      .banner-text {
+        font-size: 1.8rem;
+        padding: 20px 10px;
+      }
+      nav a {
+        margin-left: 15px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">Cabinetul Stoica Ioana – Avocat</div>
+  <nav>
+    <a href="./">Acasă</a>
+<a href="despre.html">Despre</a>
+<a href="servicii.html">Servicii</a>
+<a href="valori-angajament.html">Valori-angajament</a>
+<a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="banner-text">Prezentare</div>
+  
+  <p class="slide-up">Cabinetul de avocat <strong>STOICA IOANA</strong>, situat pe strada Primăverii, nr. 55, în localitatea Constanța, este o alegere de încredere pentru nevoile juridice ale clienților.</p>
+  
+  <p class="slide-up">Cu o experiență de 14 ani în domeniu și un portofoliu impresionant de cazuri soluționate, cabinetul a câștigat o reputație de excepție, fiind apreciat pentru profesionalism, promptitudine și dedicație.</p>
+
+  <h2 class="slide-up">Experiență și Profesionalism</h2>
+  <p class="slide-up">Doamna avocat Stoica Ioana este recunoscută nu doar pentru cunoștințele sale juridice aprofundate, ci și pentru modul empatic și dedicat în care abordează fiecare caz. Profesionalismul exemplar și atenția la detalii sunt principii fundamentale în activitatea cabinetului.</p>
+  
+  <h2 class="slide-up">Valori și Principii</h2>
+  <p class="slide-up"><strong>Etică și Confidențialitate:</strong> Cele mai înalte standarde etice stau la baza activității, iar informațiile clienților sunt tratate cu confidențialitate maximă.</p>
+  <p class="slide-up"><strong>Creativitate și Flexibilitate:</strong> Adaptare continuă la nevoile fiecărui client, găsind soluții personalizate.</p>
+  <p class="slide-up"><strong>Responsabilitate:</strong> Profesionalism, relații solide și eficiență orientată spre rezultate concrete.</p>
+  <p class="slide-up"><strong>Promptitudine:</strong> Disponibilitate și rezolvare eficientă a sarcinilor complexe.</p>
+  
+  <h2 class="slide-up">Misiunea Cabinetului</h2>
+  <p class="slide-up">Cabinetul de avocat Stoica Ioana oferă servicii juridice complete, adaptate nevoilor clienților, cu scopul de a asigura protecția drepturilor și intereselor acestora, atât în fața instanțelor de judecată, cât și prin consultanță juridică de înaltă calitate.</p>
+</main>
+
+<footer>
+  <p style="text-align:center; padding:20px 10px; background:#012A4A; color:#ffd700; margin:0;">
+    &copy; 2025 Cabinet Avocat Stoica Ioana &ndash; Toate drepturile rezervate<br />
+    Str. Primăverii, nr. 55, Constanța &nbsp;&bull;&nbsp; Telefon: +40 730 735 302 &nbsp;&bull;&nbsp; Email: stoica.juridic@yahoo.com
+  </p>
+</footer>
+
+<script>
+  window.addEventListener('load', () => {
+    const banner = document.querySelector('.banner-text');
+    banner.classList.add('slide-in');
+
+    // Adăugăm clasa .visible pentru toate elementele cu .slide-up
+    const slideElements = document.querySelectorAll('.slide-up');
+    slideElements.forEach((el, i) => {
+      // Delay progresiv pentru efect de "val"
+      setTimeout(() => {
+        el.classList.add('visible');
+      }, 200 * i);
+    });
+  });
+</script>
+</body>
+</html>
