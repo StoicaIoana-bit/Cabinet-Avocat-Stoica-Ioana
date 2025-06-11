@@ -28,11 +28,13 @@ nav a:hover {
   color: #f0c64c;
 }
 
-/* Modificări pentru ecrane mici - telefon */
+/* Responsive pentru telefon */
 @media (max-width: 768px) {
   nav a {
-    font-size: 0.85rem;  /* font mai mic */
-    margin-left: 15px;   /* mai puțin spațiu între butoane */
-    padding: 8px 10px;   /* padding mai mic pentru butoane */
+    font-size: 0.85rem;  /* font mai mic pe telefon */
+    margin-left: 15px;   /* mai puțin spațiu între link-uri */
+    padding: 8px 10px;   /* padding mai mic pe telefon */
+    display: block;      /* afișare bloc pentru meniu vertical */
+    border-bottom: 1px solid #444; /* linie separatoare între butoane */
   }
 }
