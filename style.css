@@ -131,7 +131,7 @@ p {
   h1 {
     font-size: 2rem;
   }
-  nav a {
+  nav a 
     margin-left: 15px;
     font-size: 0.9rem;
   }
@@ -144,4 +144,79 @@ footer {
   background: #012A4A;
   color: #ffd700;
   margin: 0;
+  
 } 
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger div {
+  width: 100%;
+  height: 3px;
+  background-color: #ffd700;
+  transition: all 0.3s ease;
+}
+
+/* Animatie pentru hamburger activ */
+.hamburger.active div:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.hamburger.active div:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active div:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Meniu mobil */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: #012A4A;
+  position: absolute;
+  top: 65px;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.mobile-nav.show {
+  display: flex;
+}
+
+.mobile-nav a {
+  padding: 12px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffd700;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.mobile-nav a:hover {
+  background: rgba(255, 215, 0, 0.1);
+}
+
+/* Responsive pentru meniul hamburger */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  header {
+    padding: 15px 20px;
+  }
+}
